@@ -1,9 +1,7 @@
 server:
-  port: 8891
+  port: 9001
 
 spring:
-  application:
-    name: biz-order
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -25,11 +23,6 @@ spring:
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 
 env:
   dev

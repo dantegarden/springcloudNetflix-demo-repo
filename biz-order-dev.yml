@@ -25,7 +25,9 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
 
 env:
-  dev
+  profile: dev
+  label: master
+  version: 1.0
   
 ##指定负载均衡策略
 #biz-product:

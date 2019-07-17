@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gateway
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest  
+
+env:
+  profile: dev
+  label: master
+  version: 1.0.0

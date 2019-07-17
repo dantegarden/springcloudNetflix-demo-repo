@@ -17,7 +17,7 @@ zuul:
     # 这个名字随便写
     proxy-product:
       # 路由规则
-      path: /api/product/**
+      path: /myProduct/**
       # 代理哪个服务
       serviceId: biz-product
       # 默认过滤headers的某些key，比如["Cookie", "Set-Cookie", "Authorization"], 这里设置为空，不过滤

@@ -32,7 +32,7 @@ spring:
 env:
   profile: dev
   label: master
-  version: 1.1
+  version: 1.0.1
   
 ##指定负载均衡策略
 #biz-product:

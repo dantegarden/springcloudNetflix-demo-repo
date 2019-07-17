@@ -20,6 +20,11 @@ spring:
       stat-view-servlet:
         enabled: true
         url-pattern: "/druid/*"
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest      
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect

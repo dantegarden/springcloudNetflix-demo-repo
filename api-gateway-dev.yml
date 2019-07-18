@@ -13,13 +13,17 @@ spring:
 env:
   profile: dev
   label: master
-  version: 1.0.0
+  version: 1.0.1
 
 # path: 路由规则
 # serviceId: 代理哪个服务
 # sensitiveHeaders: 默认过滤headers的某些key，比如["Cookie", "Set-Cookie", "Authorization"], 这里设置为空，不过滤
 # ignored-patterns:排除某些路由，不暴露给客户端
+# host下的两个超时配置 以url请求时会生效
 zuul:
+  host:
+    connect-timeout-millis: 600000
+    connection-request-timeout-millis: 60000
   sensitive-headers: 
   routes:
     proxy-product:
@@ -36,7 +40,20 @@ zuul:
     - /**/product/listForOrder
     - /**/product/decreaseStock
     - /config-server/**
-
+    
+# 为防止zuul的懒加载耗时，配置超时
+hystrix:
+  command:
+    default:
+      timeout: #配置命令的执行，是否会超时
+        enabled: 
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+            ribbon:
+              ReadTimeout: 600000
+              ConnectTimeout: 600000
 # 关闭安全校验
 management:
   endpoints:

@@ -37,6 +37,14 @@ zuul:
     - /**/product/decreaseStock
     - /config-server/**
 
+# 为防止zuul的懒加载耗时，配置超时
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
 
 # 关闭安全校验
 management:

@@ -41,10 +41,15 @@ zuul:
 hystrix:
   command:
     default:
+      timeout: #配置命令的执行，是否会超时
+	      enabled: true
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 600000
+            ribbon:
+              ReadTimeout: 600000
+              ConnectTimeout: 600000
 
 # 关闭安全校验
 management:

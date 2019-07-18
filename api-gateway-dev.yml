@@ -12,21 +12,7 @@ env:
   label: master
   version: 1.0.0
 
-zuul:
-  routes:
-    # 这个名字随便写
-    proxy-product:
-      # 路由规则
-      path: /myProduct/**
-      # 代理哪个服务
-      serviceId: biz-product
-      # 默认过滤headers的某些key，比如["Cookie", "Set-Cookie", "Authorization"], 这里设置为空，不过滤
-      sensitiveHeaders:
-    # 简洁写法
-#    biz-product: /api/product/**
-  # 排除某些路由，不暴露给客户端
-#  ignored-patterns:
-#    - /**/product/listForOrder
+
 
 # 关闭安全校验
 management:

@@ -26,6 +26,10 @@ zuul:
       path: /api/order/**
       serviceId: biz-order
       sensitiveHeaders:
+    proxy-user:
+      path: /api/user/**
+      serviceId: biz-user
+      sensitiveHeaders:
  # ignored-patterns:排除某些路由，不暴露给客户端
   ignored-patterns:
     - /**/product/listForOrder

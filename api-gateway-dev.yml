@@ -42,7 +42,7 @@ hystrix:
   command:
     default:
       timeout: #配置命令的执行，是否会超时
-	      enabled: true
+      	enabled: true
       execution:
         isolation:
           thread:

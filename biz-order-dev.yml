@@ -26,10 +26,32 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
 
+# 全局熔断配置
+hystrix:
+  command:
+    #默认的超时时间设置  default可以换成单个接口方法的方法名，只对该方法生效
+    default:
+      circuitBreaker:
+        enabled: true
+        requestVolumeThreshold: 10
+        sleepWindowInMilliseconds: 10000
+        errorThresholdPercentage: 60
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+
+# 允许hystrix dashboard 访问/actuator/hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","hystrix.stream"]
+
 env:
   profile: dev
   label: master
-  version: 1.0.3
+  version: 1.0.4
   
 ##指定负载均衡策略
 #biz-product:

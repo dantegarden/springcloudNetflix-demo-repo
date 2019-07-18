@@ -35,3 +35,8 @@ env:
   profile: dev
   label: master
   version: 1.0.1
+  
+# 自定义属性 保存在cookies的token名和过期时间
+user:
+  token-key: X-token
+  expire: 7200

@@ -12,6 +12,25 @@ env:
   label: master
   version: 1.0.0
 
+# path: 路由规则
+# serviceId: 代理哪个服务
+# sensitiveHeaders: 默认过滤headers的某些key，比如["Cookie", "Set-Cookie", "Authorization"], 这里设置为空，不过滤
+# ignored-patterns:排除某些路由，不暴露给客户端
+zuul:
+  routes:
+    proxy-product:
+      path: /api/product/**
+      serviceId: biz-product
+      sensitiveHeaders:
+    proxy-order:
+      path: /api/order/**
+      serviceId: biz-order
+      sensitiveHeaders:
+ # ignored-patterns:排除某些路由，不暴露给客户端
+  ignored-patterns:
+    - /**/product/listForOrder
+    - /**/product/decreaseStock
+    - /config-server/**
 
 
 # 关闭安全校验

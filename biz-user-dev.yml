@@ -38,5 +38,5 @@ env:
   
 # 自定义属性 保存在cookies的token名和过期时间
 user:
-  token-key: X-token
+  token-key: X-Token
   expire: 7200

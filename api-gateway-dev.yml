@@ -45,16 +45,6 @@ ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
 
-# 为防止zuul的懒加载耗时，配置超时
-hystrix:
-  command:
-    default:
-      timeout: #配置命令的执行，是否会超时
-        enabled: 
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 20000
             
 # 关闭安全校验
 management:
